@@ -77,7 +77,7 @@ void QHelpWidget::onCurrentItemChanged(QTreeWidgetItem* pCur, QTreeWidgetItem* p
 	m_pBrowserPage->clear();
 	if(pCur){
 		QString sUrl = pCur->data(0, Qt::UserRole).toString();
-		sUrl = _CLocalFile::concatenate(":/doc/", sUrl);
+		sUrl = _CLocalFile::concatenate(":/docs/", sUrl);
 		QString sHtml = _CTextFile(sUrl).load("");
 		if(!sHtml.isEmpty()){
 			m_pBrowserPage->setHtml(sHtml);

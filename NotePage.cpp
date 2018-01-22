@@ -616,7 +616,7 @@ void QNotePage::onSetReminder()
 	if(m_tReminder.toTime_t() > 0){
 		tDef = m_tReminder;
 	}
-	QDlgSetReminder dlg(tDef, this);
+	QDlgSetReminder dlg(tDef, NULL);
 	if(dlg.exec()){
 		setReminder(dlg.m_tReminder);
 	}
@@ -674,7 +674,7 @@ void QNotePage::onTextFont()
 	QFont font;
 	QFontDialog dlg(m_pRichEdit->currentFont(), NULL);
 	dlg.setWindowFlags(Qt::WindowStaysOnTopHint);
-	dlg.setWindowTitle("Select a font for the selected text");
+	dlg.setWindowTitle(_lc("Dlg.Font.Format", "Select a font for the selected text"));
 	if(dlg.exec() == QFontDialog::Accepted){
 		font = dlg.selectedFont();
 		m_pRichEdit->setCurrentFont(font);

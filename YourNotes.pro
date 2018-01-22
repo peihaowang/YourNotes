@@ -28,12 +28,9 @@ SOURCES += main.cpp\
 HEADERS  += \
     app_constants.h \
     app_settings.h \
-    app_types.h \
     app_utilities.h \
     common_headers.h \
     cpp_utilities.h \
-    dll_utilities.h \
-    encoding_specific.h \
     file_utilities.h \
     platform_specific.h \
     string_utilities.h \

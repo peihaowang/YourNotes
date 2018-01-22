@@ -9,10 +9,10 @@
 QDlgSetReminder::QDlgSetReminder(const QDateTime& tDef, QWidget* parent)
 	: QDialog(parent)
 {
-	QDialog::setWindowTitle("Set reminder");
+	QDialog::setWindowTitle(_lc("Dlg.Reminder.Title", "Set reminder ..."));
 	QDialog::setWindowIcon(QIcon(":/images/btn_set_reminder.png"));
 
-	m_pStaticInvalidReminder = new QLabel("The specified time has expired, please select a future time", this);
+	m_pStaticInvalidReminder = new QLabel(_lc("Dlg.Reminder.Expired", "The specified time has expired, please select a future time."), this);
 	m_pStaticInvalidReminder->setStyleSheet("QLabel{color: red;}");
 	m_pStaticInvalidReminder->setWordWrap(true);
 	m_pStaticInvalidReminder->setVisible(false);
@@ -25,11 +25,11 @@ QDlgSetReminder::QDlgSetReminder(const QDateTime& tDef, QWidget* parent)
 	m_pTimeReminder->setDateTime(tDef);
 	QObject::connect(m_pTimeReminder, SIGNAL(dateTimeChanged(QDateTime)), this, SLOT(onDetectReminderTime()));
 
-	QLabel* pStaticReminder = new QLabel("&Select reminder time", this);
+	QLabel* pStaticReminder = new QLabel(_lc("Dlg.Reminder.Descr", "&Select reminder time"), this);
 	pStaticReminder->setBuddy(m_pTimeReminder);
 
-	m_pBtnOk = new QPushButton("&OK", this);
-	QPushButton* pBtnCancel = new QPushButton("&Cancel", this);
+	m_pBtnOk = new QPushButton(_lc("Btn.OK", "&OK"), this);
+	QPushButton* pBtnCancel = new QPushButton(_lc("Btn.Cancel", "&Cancel"), this);
 	QObject::connect(m_pBtnOk, SIGNAL(clicked()), this, SLOT(accept()));
 	QObject::connect(pBtnCancel, SIGNAL(clicked()), this, SLOT(reject()));
 

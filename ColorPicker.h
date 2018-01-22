@@ -23,6 +23,8 @@ protected:
 
 	bool		m_bColorCheckable;
 
+	QColor		m_clCurrent;
+
 protected:
 
 	QToolButton* addColor(const QString& sName, const QColor& clColor);

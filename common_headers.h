@@ -56,15 +56,9 @@
 
 #include "platform_specific.h"
 #include "cpp_utilities.h"
-#include "encoding_specific.h"
 #include "file_utilities.h"
 #include "string_utilities.h"
 
-#include "dll_utilities.h"
-
-#include "app_types.h"
 #include "app_constants.h"
-
 #include "app_utilities.h"
-
 #include "app_settings.h"

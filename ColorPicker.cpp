@@ -6,6 +6,7 @@ QColorPicker::QColorPicker(QWidget* parent)
 	: QWidget(parent)
 	, m_nCount(0)
 	, m_nNumOfCols(8)
+	, m_clCurrent(0, 0, 0, 0)
 {
 	m_pButtonsGroup = new QButtonGroup(this);
 	m_pButtonsGroup->setExclusive(true);
@@ -92,6 +93,7 @@ void QColorPicker::onColorBtnClicked()
 	if(pAction){
 		QColor clColor = pAction->data().value<QColor>();
 		if(clColor.isValid()){
+			m_clCurrent = clColor;
 			emit colorChose(clColor);
 		}
 	}
@@ -99,20 +101,25 @@ void QColorPicker::onColorBtnClicked()
 
 void QColorPicker::onTransparentColor()
 {
+	m_clCurrent = QColor(Qt::transparent);
 	emit colorChose(QColor(Qt::transparent));
 }
 
 void QColorPicker::onMoreColor()
 {
-	bool bOk = false;
-	QColor clColor = _CComDlg::getColor(bOk, QApplication::activeWindow(), "Pick a color", QColor(0, 0, 0));
-	if(bOk){
+	QColorDialog dlgColor(m_clCurrent, NULL);
+	dlgColor.setWindowTitle(_lc("Dlg.Color", "Pick a color ..."));
+	if(dlgColor.exec() == QColorDialog::Accepted){
+		QColor clColor = dlgColor.selectedColor();
+
 		_CPairVector<QString, QColor>::const_iterator it = g_xOpt.m_vColorsList._find(clColor);
 		if(it == g_xOpt.m_vColorsList.end()){
 			QString sName = clColor.name();
 			g_xOpt.m_vColorsList[sName] = clColor;
 			addColor(sName, clColor);
 		}
+		m_clCurrent = clColor;
+
 		emit colorChose(clColor);
 	}
 }
