@@ -7,7 +7,7 @@
 #define		_APP_VER_MAIN				1
 #define		_APP_VER_MINOR				0
 #define		_APP_VER_REVISION			0
-#define		_APP_VER_STATE				""
+#define		_APP_VER_STATE				(QString("B")+"e"+"t"+"a"+"-"+"0"+"1") //"Beta-01"
 
 #define		_APP_VER_STR_BASE			QString("%1.%2.%3").arg(_APP_VER_MAIN).arg(_APP_VER_MINOR).arg(_APP_VER_REVISION)
 #define		_APP_VER_STR_SHORT			QString("%1").arg(_APP_VER_STR_BASE)
