@@ -10,9 +10,9 @@
 ## Install YourNotes
 *YourNotes* is an open-source application first released on Github. Since installation package hasn't been released, end users need to download the source code, then compile and run it by themselves. To run *YourNotes* successfully, please follow steps below:
 
-1.Visit *YourNotes* repository page and fork *YourNotes* to your own repositories.
-2.Clone it to the local disk.
-3.Compile the source code with Qt Creator and run the compiled program. Please note that: you may need to be familar with [Qt Creator](http://doc.qt.io/qtcreator/index.html) before.
+1. Visit *YourNotes* repository page and fork *YourNotes* to your own repositories.
+2. Clone it to the local disk.
+3. Compile the source code with Qt Creator and run the compiled program. Please note that: you may need to be familar with [Qt Creator](http://doc.qt.io/qtcreator/index.html) before.
 
 Please note that *YourNotes* was developed with Qt 5.5.1 without consideration of the compatibility with Qt4.
 
@@ -23,6 +23,6 @@ Installation package will be released later.
 [Email to us](mailto:wangpeihao@gmail.com) for bug report and technical support.
 
 ## Special Thanks
-1.[Wjj Software](http://www.wjjsoft.com).
-2.[The Qt Company Ltd.](http://www.qt.io/).
-3.[ShanghaiTech University](http://www.shanghaitech.edu.cn/).
+1. [Wjj Software](http://www.wjjsoft.com).
+2. [The Qt Company Ltd.](http://www.qt.io/).
+3. [ShanghaiTech University](http://www.shanghaitech.edu.cn/).
