@@ -1,13 +1,13 @@
-#*YourNotes*
+#YourNotes#
 
-## Introducation to *YourNotes*
+## Introducation to YourNotes
 *YourNotes* is a simple and quick mini-program for personal note management and schedule reminding. All notes created by *YourNotes* is stored on the disk and can be displayed or hidden on the screen. *YourNotes* is built for efficiency, practicality and convenience as an open-source application. And this version is specifically developed for desktop usage with Qt framework. Now *YourNotes* Desktop supports cross-platform feature and is available for Windows XP/Vista/7/8/10, Mac OS X and Linux.
 
 ## Commitment and Improvement
 *YourNotes* is an open-source project released on Github community, thus, we encourage developers interested in this project to help us improve *YourNotes*. We would appreciate your suggestions and implementation code.
 [Contact us](mailto:wangpeihao@gmail.com) to let us know your ideas.
 
-## Install *YourNotes*
+## Install YourNotes
 *YourNotes* is an open-source application first released on Github. Since installation package hasn't been released, end users need to download the source code, then compile and run it by themselves. To run *YourNotes* successfully, please follow steps below:
 
 1.Visit *YourNotes* repository page and fork *YourNotes* to your own repositories.
@@ -23,6 +23,6 @@ Installation package will be released later.
 [Email to us](mailto:wangpeihao@gmail.com) for bug report and technical support.
 
 ## Special Thanks
-1.Wjj Software [Wjj Software](http://www.wjjsoft.com)
-2.The [Qt Company Ltd.](http://www.qt.io/)
-3.[ShanghaiTech University](http://www.shanghaitech.edu.cn/)
+1.[Wjj Software](http://www.wjjsoft.com).
+2.[The Qt Company Ltd.](http://www.qt.io/).
+3.[ShanghaiTech University](http://www.shanghaitech.edu.cn/).
