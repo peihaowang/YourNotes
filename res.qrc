@@ -1,0 +1,43 @@
+<RCC>
+    <qresource prefix="/">
+        <file>images/btn_del_note.png</file>
+        <file>images/btn_new_note.png</file>
+        <file>images/btn_bold.png</file>
+        <file>images/btn_copy.png</file>
+        <file>images/btn_cut.png</file>
+        <file>images/btn_font.png</file>
+        <file>images/btn_highlight.png</file>
+        <file>images/btn_italic.png</file>
+        <file>images/btn_paste.png</file>
+        <file>images/btn_redo.png</file>
+        <file>images/btn_strikeout.png</file>
+        <file>images/btn_underline.png</file>
+        <file>images/btn_undo.png</file>
+        <file>images/ico_sizegrip.png</file>
+        <file>images/btn_background.png</file>
+        <file>images/btn_about.png</file>
+        <file>images/btn_set_reminder.png</file>
+        <file>images/ico_notes.png</file>
+        <file>images/ico_logo.ico</file>
+        <file>images/ico_help.png</file>
+        <file>images/ico_options.png</file>
+        <file>images/ico_overview.png</file>
+        <file>images/btn_play.png</file>
+        <file>lang/enu.ini</file>
+        <file>lang/chs.ini</file>
+        <file>images/ico_display.png</file>
+        <file>images/ico_readonly.png</file>
+        <file>images/btn_close.png</file>
+        <file>images/btn_minimize.png</file>
+        <file>sounds/wav_chimes.wav</file>
+        <file>sounds/wav_ding.wav</file>
+        <file>docs/contents.xml</file>
+        <file>docs/create_notes.html</file>
+        <file>docs/custom_notes.html</file>
+        <file>docs/edit_format_text.html</file>
+        <file>docs/index.html</file>
+        <file>docs/install_uninstall.html</file>
+        <file>docs/manage_notes.html</file>
+        <file>docs/reminder.html</file>
+    </qresource>
+</RCC>

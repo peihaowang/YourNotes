@@ -1,0 +1,10 @@
+<contents>
+	<node title="YourNotes Documentation" url="index.html">
+		<node title="Install and Uninstall" url="install_uninstall.html" />
+		<node title="Create Notes" url="create_notes.html" />
+		<node title="Custom Notes" url="custom_notes.html" />
+		<node title="Edit and Format Text" url="edit_format_text.html" />
+		<node title="Reminder" url="reminder.html" />
+		<node title="Manage Notes" url="manage_notes.html" />
+	</node>
+</contents>
