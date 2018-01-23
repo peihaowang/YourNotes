@@ -72,7 +72,10 @@ QToolButton* QColorPicker::addColor(const QString& sName, const QColor& clColor)
 
 	QToolButton* pColorBtn = new QToolButton(this);
 #if defined(Q_OS_MAC)
-	pColorBtn->setObjectName("ColorButton");
+	pColorBtn->setStyleSheet("QToolButton{background-color: transparent; border: 0px none transparent; padding: 2px;}"
+		"QToolButton::hover{background-color: rgba(200, 200, 200, 150); border: 1px solid gray; border-radius: 2px;}"
+		"QToolButton::pressed{background-color: rgba(150, 150, 150, 150); border: 1px solid gray; border-radius: 2px;}"
+	);
 #endif
 	pColorBtn->setDefaultAction(pAction);
 	pColorBtn->setIconSize(szIcon);

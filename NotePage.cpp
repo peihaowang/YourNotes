@@ -31,6 +31,9 @@ QNotePage::QNotePage(const QString& sName, QWidget *parent)
 //	m_xSoundReminder.setLoops(-1);	//Forever
 
 	QWidget::setAttribute(Qt::WA_DeleteOnClose, true);
+#if defined(Q_OS_MAC)
+	QWidget::setAttribute(Qt::WA_MacAlwaysShowToolWindow, true);
+#endif
 	QWidget::setWindowFlags(Qt::Tool | Qt::FramelessWindowHint | Qt::WindowStaysOnTopHint);
 	QFrame::setFrameShape(QFrame::Box);
 	QWidget::setAutoFillBackground(true);
@@ -55,6 +58,12 @@ QNotePage::QNotePage(const QString& sName, QWidget *parent)
 	m_pBtnNewNote->setToolTip(_lc("Info.NewNote", "Create a new note beside"));
 	m_pBtnNewNote->setAutoRaise(true);
 	m_pBtnNewNote->setCursor(Qt::ArrowCursor);
+#if defined(Q_OS_MAC)
+	m_pBtnNewNote->setStyleSheet("QToolButton{background-color: transparent; border: 0px none transparent; padding: 2px;}"
+		"QToolButton::hover{background-color: rgba(200, 200, 200, 150); border: 1px solid gray; border-radius: 2px;}"
+		"QToolButton::pressed{background-color: rgba(150, 150, 150, 150); border: 1px solid gray; border-radius: 2px;}"
+	);
+#endif
 	QObject::connect(m_pBtnNewNote, SIGNAL(clicked()), this, SLOT(onNewPage()));
 
 	m_pBtnDeleteNote = new QToolButton(this);
@@ -63,6 +72,12 @@ QNotePage::QNotePage(const QString& sName, QWidget *parent)
 	m_pBtnDeleteNote->setToolTip(_lc("Info.DelNote", "Hide this note"));
 	m_pBtnDeleteNote->setAutoRaise(true);
 	m_pBtnDeleteNote->setCursor(Qt::ArrowCursor);
+#if defined(Q_OS_MAC)
+	m_pBtnDeleteNote->setStyleSheet("QToolButton{background-color: transparent; border: 0px none transparent; padding: 2px;}"
+		"QToolButton::hover{background-color: rgba(200, 200, 200, 150); border: 1px solid gray; border-radius: 2px;}"
+		"QToolButton::pressed{background-color: rgba(150, 150, 150, 150); border: 1px solid gray; border-radius: 2px;}"
+	);
+#endif
 	QObject::connect(m_pBtnDeleteNote, SIGNAL(clicked()), this, SLOT(onDeletePage()));
 
 	m_pBtnChangeColor = new QLabel(this);

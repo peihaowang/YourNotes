@@ -312,8 +312,12 @@ void MainWindow::setWindowVisible(bool bVisible)
 		QMainWindow::showNormal();
 		QMainWindow::activateWindow();
 	}else{
+#if defined(Q_OS_WIN)
 		QMainWindow::setWindowFlags(Qt::Tool);
 		QMainWindow::setVisible(false);
+#else
+		QMainWindow::showMinimized();
+#endif
 	}
 }
 
