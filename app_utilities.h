@@ -76,6 +76,103 @@ public:
 
 ///////////////////////////////////////////////////////////
 
+class _CTemporaryFile{
+
+private:
+
+	QString		 m_sTmpDir;
+
+public:
+
+	_CTemporaryFile(void) : m_sTmpDir(QDir::tempPath()){return;}
+	_CTemporaryFile(const QString& sTmpDir)
+		: m_sTmpDir(sTmpDir)
+	{
+		return;
+	}
+
+	QString _getTempFile(const QString& sPrefix0="", const QString& sSuffix0="")
+	{
+		//2014.9.13 allows to customize the prefix as well;
+		QString sTmpFn, sPre=sPrefix0, sSuf=sSuffix0; sSuf.replace(QString("."), QString(""));
+		if(sPre.isEmpty()) sPre="~ph";
+		if(sSuf.isEmpty()) sSuf="tmp";
+		do{
+			QString sName=QString("%1%2_%3.%4")
+				      .arg(sPre)
+				      .arg(time(NULL), 0, 16)
+				      .arg(qrand(), 0, 16)
+				      .arg(sSuf)
+				      ;
+			QFileInfo f(m_sTmpDir, sName);
+			if(!f.exists()){
+				sTmpFn=f.filePath();
+				break;
+			}
+		}while(true);
+		return sTmpFn;
+	}
+
+//	QString _getTempDir(const QString& sInfo = "")
+//	{
+//		QString sTmpFn;
+//		do{
+//			QString sName = QString("%1-%2-%3")
+//					.arg(sInfo)
+//					.arg(time(NULL), 0, 16)
+//					.arg(qrand(), 0, 16)
+//					;
+//			QFileInfo f(m_sTmpDir, sName);
+//			if(!f.exists()){
+//				sTmpFn=f.filePath();
+//				break;
+//			}
+//		}while(true);
+//		return sTmpFn;
+//	}
+
+};
+
+///////////////////////////////////////////////////////////
+
+class _CDeferFileDeletion{
+
+private:
+
+	QString				m_sFnToDel;
+	bool				m_bTrackErr; //2014.4.9 whether to keep the file name in buffer if failed to delete it;
+
+	static QStringList		s_vFailed; //2014.4.9 files that have problems being deleted;
+
+public:
+
+	~_CDeferFileDeletion(void){perform();}
+	_CDeferFileDeletion(const QString& sFn, bool bTrackErr=true)
+		: m_sFnToDel(sFn)
+		, m_bTrackErr(bTrackErr)
+	{
+		return;
+	}
+
+	bool perform(void)
+	{
+		QFile::remove(m_sFnToDel);
+		bool bExist=QFileInfo(m_sFnToDel).exists();
+		if(bExist && m_bTrackErr){
+			s_vFailed << m_sFnToDel;
+		}
+		return bExist;
+	}
+
+public:
+
+	static QStringList& getFailed(void){return s_vFailed;}
+	static void clearFailed(void){s_vFailed.clear();}
+
+};
+
+///////////////////////////////////////////////////////////
+
 class _CLocalFile{
 
 public:
