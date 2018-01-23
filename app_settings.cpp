@@ -167,7 +167,6 @@ void iniPut(_CKeyValEntries& xKV, const QString& sKey, const QFont& xFont)
 
 _CAppSettings::_CAppSettings()
 {
-	_init();
 }
 
 void _CAppSettings::_init(void)
@@ -298,6 +297,9 @@ void _CAppSettings::loadLangIni(void)
 
 void _CAppSettings::load(const QString& sIniFn)
 {
+	//Initialize settings after application is constructed
+	_init();
+
 	//load settings from INI;
 	{
 		QString sTxt=_CTextFile(sIniFn).load("");
