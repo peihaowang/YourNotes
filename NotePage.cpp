@@ -5,7 +5,7 @@
 #include <QMediaPlaylist>
 
 #include "common_headers.h"
-#include "menucolor.h"
+#include "MenuColor.h"
 #include "DlgSetReminder.h"
 #include "NotePage.h"
 

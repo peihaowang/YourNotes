@@ -35,14 +35,26 @@ QUnifiedTabWidget::QUnifiedTabWidget(QWidget* parent)
 	m_pBtnMinimize->setToolTip(_lc("App.Minimize", "Minimize"));
 //	m_pBtnMinimize->setIcon(QWidget::style()->standardIcon(QStyle::SP_TitleBarMinButton));
 	m_pBtnMinimize->setIcon(QIcon(":/images/btn_minimize.png"));
-	QObject::connect(m_pBtnMinimize, SIGNAL(clicked()), this, SLOT(onMinBtnClicked()));
+#if defined(Q_OS_MAC)
+    m_pBtnMinimize->setStyleSheet("QToolButton{background-color: transparent; border: 0px none transparent; padding: 2px;}"
+        "QToolButton::hover{background-color: rgba(200, 200, 200, 150); border: 1px solid gray; border-radius: 2px;}"
+        "QToolButton::pressed{background-color: rgba(150, 150, 150, 150); border: 1px solid gray; border-radius: 2px;}"
+    );
+#endif
+    QObject::connect(m_pBtnMinimize, SIGNAL(clicked()), this, SLOT(onMinBtnClicked()));
 
 	m_pBtnClose = new QToolButton(this);
 	m_pBtnClose->setAutoRaise(true);
 	m_pBtnClose->setToolTip(_lc("App.Close", "Close"));
 //	m_pBtnClose->setIcon(QWidget::style()->standardIcon(QStyle::SP_TitleBarCloseButton));
 	m_pBtnClose->setIcon(QIcon(":/images/btn_close.png"));
-	QObject::connect(m_pBtnClose, SIGNAL(clicked()), this, SLOT(onCloseBtnClicked()));
+#if defined(Q_OS_MAC)
+    m_pBtnClose->setStyleSheet("QToolButton{background-color: transparent; border: 0px none transparent; padding: 2px;}"
+        "QToolButton::hover{background-color: rgba(200, 200, 200, 150); border: 1px solid gray; border-radius: 2px;}"
+        "QToolButton::pressed{background-color: rgba(150, 150, 150, 150); border: 1px solid gray; border-radius: 2px;}"
+    );
+#endif
+    QObject::connect(m_pBtnClose, SIGNAL(clicked()), this, SLOT(onCloseBtnClicked()));
 
 	QHBoxLayout* pLayoutSysBtns = new QHBoxLayout;
 	pLayoutSysBtns->setContentsMargins(0, 0, 10, 0);

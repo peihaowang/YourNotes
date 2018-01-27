@@ -17,7 +17,6 @@ class _CNoteStg{
 private:
 
 	QDir				m_xOpenedFld;
-	bool				m_bDirty;
 	bool				m_bOpened;
 
 protected:
