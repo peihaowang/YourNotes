@@ -558,7 +558,7 @@ void MainWindow::onAbout()
 
 	QString sMsg = "<b style='font-size:20px;'>%sAppTitle%</b>"
 		       "<br/>%sCopyrights%"
-		       "<br/><br/><a href='%sWebsite%'>wph.wjjsoft.com</a>"
+		       "<br/><br/><a href='%sWebsite%'>github.com/peihaowang</a>"
 		       "<br/><a href='%sEmail%'>mailto:wangpeihao@gmail.com</a>"
 		       "<br/><br/>An open-source application built for efficiency, practicality and convenience."
 		       ;

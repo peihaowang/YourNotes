@@ -17,7 +17,7 @@
 #define		_APP_COPYRIGHT_NOTICE			QString("Copyright %1 Peihao Wang. All Rights Reserved.").arg((QDate::currentDate().year() == 2018) ? QString::number(2018) : QString("2018 - %1").arg(QDate::currentDate().year()))
 
 //website URLs;
-#define		_APP_URL_WEBSITE			"http://wph.wjjsoft.com"
+#define		_APP_URL_WEBSITE			"https://github.com/peihaowang"
 #define		_APP_URL_CGI				"mailto:wangpeihao@gmail.com"
 
 //note storage specific constants;
