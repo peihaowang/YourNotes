@@ -14,10 +14,11 @@
 2. Clone it to the local disk.
 3. Compile the source code with Qt Creator and run the compiled program. Please note that: you may need to be familar with [Qt Creator](http://doc.qt.io/qtcreator/index.html) before.
 
-Please note that *YourNotes* was developed with Qt 5.5.1 without consideration of the compatibility with Qt4.
+Note that *YourNotes* is based on Qt 5.5.1 and works well, but may have compatibility issues with Qt4.
 
-We're sorry for the inconvenience causing by the installation of *YourNotes*, since you, as a user, have to be familar with [Git](https://git-scm.com/doc) and [Qt5](http://doc.qt.io/qt-5/).
-Installation package will be released later.
+You may need to be familar with [Git](https://git-scm.com/doc) and [Qt5](http://doc.qt.io/qt-5/) before getting started to clone and compile *YourNotes*.
+
+Installation packages will be released later.
 
 ## Support
 [Email to us](mailto:wangpeihao@gmail.com) for bug report and technical support.
